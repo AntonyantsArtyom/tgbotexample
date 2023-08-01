@@ -1,0 +1,207 @@
+.product {
+   margin: auto;
+   margin-top: 5px;
+   width: 348px;
+   height: 270px;
+   flex-shrink: 0;
+   border-radius: 20px;
+   background: var(--background-color);
+   box-shadow: 0px 0px 12px 0px var(--shadow-color);
+   overflow: hidden;
+
+   position: relative;
+}
+.name {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 28px;
+   font-style: normal;
+   font-weight: 800;
+   line-height: 24px;
+   text-transform: uppercase;
+
+   position: absolute;
+   z-index: 2;
+   top: 24px;
+   left: 24px;
+}
+.description {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   white-space: pre-wrap;
+
+   position: absolute;
+   z-index: 2;
+   top: 58px;
+   left: 24px;
+}
+.price {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 26px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: -1px;
+
+   position: absolute;
+   z-index: 2;
+   top: 106px;
+   left: 24px;
+}
+.button_Back {
+   width: 117px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   background: none;
+
+   position: absolute;
+   z-index: 2;
+   top: 200px;
+   left: 24px;
+}
+.button_Delete {
+   width: 117px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   background: none;
+
+   position: absolute;
+   z-index: 2;
+   top: 200px;
+   left: 24px;
+}
+.button_Change {
+   width: 117px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   background: none;
+
+   position: absolute;
+   z-index: 2;
+   top: 150px;
+   left: 24px;
+}
+.button_toBasket {
+   width: 117px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   background: none;
+
+   position: absolute;
+   z-index: 2;
+   top: 150px;
+   left: 24px;
+}
+.image {
+   width: 210px;
+   height: 180px;
+
+   position: absolute;
+   z-index: 2;
+   top: 94px;
+   left: 138px;
+}
+.calculatedPrice {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+
+   position: absolute;
+   z-index: 2;
+   left: 25px;
+   top: 116px;
+}
+.countInput_desc {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+
+   position: absolute;
+   left: 25px;
+   top: 79px;
+}
+.countInput {
+   width: 40px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   background: none;
+
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 22px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   text-align: center;
+
+   position: absolute;
+   left: 87px;
+   top: 71px;
+}
+.count_inBasket {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+
+   position: absolute;
+   left: 26px;
+   top: 73px;
+}
+.price_inBasket {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+
+   position: absolute;
+   left: 26px;
+   top: 98px;
+}

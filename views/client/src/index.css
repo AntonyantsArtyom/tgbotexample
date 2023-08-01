@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+   --text-color: var(--tg-theme-text-color);
+   --background-color: var(--tg-theme-bg-color);
+   --shadow-color: var(--tg-theme-text-color);
+}
+
+* {
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}
+button:active {
+   transform: scale(0.97);
+   transition: 50ms;
+}
+body {
+   padding-bottom: 100px;
+   background: var(--background-color);
+}
+body {
+   overflow: auto;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+   width: 0;
+   height: 0;
+}

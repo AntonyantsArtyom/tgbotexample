@@ -1,0 +1,212 @@
+.area {
+   width: 348px;
+   height: 490px;
+   border-radius: 20px;
+   background: var(--background-color);
+   box-shadow: 0px 0px 12px 0px var(--shadow-color);
+   margin: auto;
+   margin-top: 5px;
+   position: relative;
+}
+.head {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   position: absolute;
+   left: 24px;
+   top: 10px;
+}
+.adres_d {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   top: 40px;
+   left: 24px;
+}
+.adres {
+   width: 304px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   background: none;
+   position: absolute;
+   top: 64px;
+   left: 24px;
+
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   padding-left: 5px;
+}
+.phone_d {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   top: 109px;
+   left: 24px;
+}
+.phone {
+   width: 125px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   background: none;
+   position: absolute;
+   top: 133px;
+   left: 24px;
+
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   padding-left: 5px;
+}
+.time_d {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   top: 109px;
+   left: 160px;
+}
+.time {
+   width: 167px;
+   height: 40px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   background: none;
+   position: absolute;
+   top: 133px;
+   left: 161px;
+
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   padding-left: 5px;
+}
+.description {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 18px;
+   letter-spacing: -1px;
+   white-space: pre-wrap;
+   opacity: 0.5;
+   position: absolute;
+   left: 24px;
+   top: 176px;
+}
+.additional_d {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   top: 214px;
+   left: 24px;
+}
+.additional {
+   width: 297px;
+   height: 69px;
+   border-radius: 5px;
+   border: 2px solid var(--text-color);
+   background: none;
+   position: absolute;
+   left: 24px;
+   top: 238px;
+   resize: none;
+
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 18 px;
+   letter-spacing: -1px;
+   padding-left: 5px;
+}
+.friend_p {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   left: 24px;
+   top: 327px;
+}
+.week_p {
+   color: var(--text-color);
+   font-family: Inter;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   left: 24px;
+   top: 351px;
+}
+.old_price {
+   color: var(--text-color);
+   font-family: Inter;
+   font-variant-numeric: lining-nums tabular-nums;
+   font-size: 26px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px;
+   text-decoration: line-through;
+   letter-spacing: -1px;
+   position: absolute;
+   left: 226px;
+   top: 324px;
+   opacity: 0.5;
+}
+.new_price {
+   color: var(--text-color);
+   font-variant-numeric: lining-nums tabular-nums;
+   font-family: Inter;
+   font-size: 26px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: -1px;
+   position: absolute;
+   left: 226px;
+   top: 348px;
+}
