@@ -21,9 +21,19 @@ const onUseQRPromotion = require("./actions/onUseQRPromotion")
 const cron = require("node-cron")
 const onRefreshPromotions = require("./actions/onRefreshPromotions")
 const onFAQ = require("./actions/onFAQ")
+const https = require("https")
+const fs = require("fs")
 const port = consts.port
 
-app.listen(port, () => console.log(`порт сервера - ${port}`))
+const sslServer = https.createServer(
+   {
+      key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+      cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+   },
+   app
+)
+sslServer.listen(port, () => console.log(`порт защищенного сервера - ${port}`))
+
 app.use(express.static(path.join(__dirname, "views/client/build/")))
 app.use(express.static(path.join(__dirname, "views/client/public/images")))
 app.use(express.json())
