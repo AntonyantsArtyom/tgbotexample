@@ -24,7 +24,7 @@ const onFAQ = require("./actions/onFAQ")
 const https = require("https")
 const fs = require("fs")
 const port = consts.port
-
+/*
 const sslServer = https.createServer(
    {
       key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
@@ -33,7 +33,8 @@ const sslServer = https.createServer(
    app
 )
 sslServer.listen(port, () => console.log(`порт защищенного сервера - ${port}`))
-
+*/
+app.listen(port, () => console.log(`порт сервера - ${port}`))
 app.use(express.static(path.join(__dirname, "views/client/build/")))
 app.use(express.static(path.join(__dirname, "views/client/public/images")))
 app.use(express.json())
