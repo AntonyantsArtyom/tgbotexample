@@ -14,18 +14,20 @@ module.exports = {
                   friendPromotion: friend,
                }
             )
-            bot.sendMessage(
-               user.chat,
-               `<b>бонусы были обновлены</b>\n\n<b>активные бонусы:</b>${
-                  friend != 0 ? `\n-${friend}%` : ""
-               }\n-${week} рублей`,
-               {
-                  parse_mode: "HTML",
-                  reply_markup: {
-                     inline_keyboard: [[{ text: "✅ ок", callback_data: "delete_message" }]],
-                  },
-               }
-            )
+            try {
+               bot.sendMessage(
+                  user.chat,
+                  `<b>бонусы были обновлены</b>\n\n<b>активные бонусы:</b>${
+                     friend != 0 ? `\n-${friend}%` : ""
+                  }\n-${week} рублей`,
+                  {
+                     parse_mode: "HTML",
+                     reply_markup: {
+                        inline_keyboard: [[{ text: "✅ ок", callback_data: "delete_message" }]],
+                     },
+                  }
+               )
+            } catch (error) {}
          } catch (error) {}
       }
    },
