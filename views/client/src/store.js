@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx"
 import axios from "axios"
 
 class store {
-   server = "http://45.87.247.56:3443"
+   server = "https://greenfoxbot.ru"
    id = window.Telegram.WebApp.initDataUnsafe.user.id
    loading = true
    deliveryData = {

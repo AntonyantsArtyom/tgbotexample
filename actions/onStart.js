@@ -35,16 +35,18 @@ module.exports = {
             if ((await User.findOne({ id: match[1] })) && match[1] != msg.from.id) {
                const children = await User.findOne({ id: match[1] }).then((data) => data.children)
                await User.updateOne({ id: match[1] }, { children: [...children, msg.from.id] })
-               bot.sendMessage(
-                  await User.findOne({ id: match[1] }).then((data) => data.chat),
-                  "кто-то перешел в бота по вашей ссылке. бонус за приглашения изменен",
-                  {
-                     parse_mode: "HTML",
-                     reply_markup: {
-                        inline_keyboard: [[{ text: "✅ ок", callback_data: "delete_message" }]],
-                     },
-                  }
-               )
+               try {
+                  bot.sendMessage(
+                     await User.findOne({ id: match[1] }).then((data) => data.chat),
+                     "кто-то перешел в бота по вашей ссылке. бонус за приглашения изменен",
+                     {
+                        parse_mode: "HTML",
+                        reply_markup: {
+                           inline_keyboard: [[{ text: "✅ ок", callback_data: "delete_message" }]],
+                        },
+                     }
+                  )
+               } catch (error) {}
             }
          }
       } catch (error) {

@@ -61,4 +61,8 @@ bot.on("callback_query", (msg) => {
    msg.data == onFAQ.callback && onFAQ.action(msg)
 })
 
-cron.schedule("*/30 * * * *", onRefreshPromotions.action)
+cron.schedule("* * * * *", () => {
+   try {
+      onRefreshPromotions.action()
+   } catch (error) {}
+})

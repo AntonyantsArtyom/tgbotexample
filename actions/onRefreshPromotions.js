@@ -27,8 +27,12 @@ module.exports = {
                      },
                   }
                )
-            } catch (error) {}
-         } catch (error) {}
+            } catch (error) {
+               console.log(error)
+            }
+         } catch (error) {
+            console.log(error)
+         }
       }
    },
 }
