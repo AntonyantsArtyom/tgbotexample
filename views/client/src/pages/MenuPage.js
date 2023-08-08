@@ -24,6 +24,7 @@ function MenuPage() {
    }
    return (
       <>
+         <div> {"ошибка" + store.error}</div>
          {store.loading && <Loader />}
          {store.error && (
             <Error
