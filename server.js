@@ -38,7 +38,9 @@ app.listen(port, () => console.log(`порт сервера - ${port}`))
 app.use(express.static(path.join(__dirname, "views/client/build/")))
 app.use(express.static(path.join(__dirname, "views/client/public/images")))
 app.use(express.json())
-app.use(cors())
+app.use(
+   cors({ "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS" })
+)
 connectMongoose()
 
 bot.onText(onStart.text, onStart.action)
