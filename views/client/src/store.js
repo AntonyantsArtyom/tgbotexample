@@ -11,7 +11,6 @@ class store {
       time: "",
       additional: "",
    }
-   error = ""
    promotions = {
       week: null,
       friend: null,
@@ -32,7 +31,6 @@ class store {
       this.basket.forEach((product) => (products.find((p) => p.name == product.name).count = product.count))
       this.products = products
       this.loading = false
-      this.error = await axios.get(this.server + "/products").catch((res) => JSON.stringify(res))
    }
    async getPromotions() {
       this.promotions = await axios.get(this.server + "/promotions/" + this.id).then((res) => res.data)
