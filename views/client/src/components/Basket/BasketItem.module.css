@@ -87,8 +87,8 @@
    font-weight: 500;
    line-height: 16px;
    letter-spacing: -1px;
-   width: 50px;
-   height: 23px;
+   width: 35px;
+   height: 35px;
    border-radius: 5px;
    border: 2px solid #db2020;
    background: none;
@@ -96,4 +96,7 @@
    position: absolute;
    left: 256px;
    top: -2px;
+
+   display: grid;
+   place-content: center;
 }

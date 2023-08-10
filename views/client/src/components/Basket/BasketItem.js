@@ -28,7 +28,7 @@ function BasketItem({ name, id, image, count, price }) {
          <p className={classes.price_description}>в сумме</p>
          <p className={classes.price}>{count * price + "Р"}</p>
          <button className={classes.del_button} onClick={onDelete}>
-            del
+            <img src={"images/trash.svg"} />
          </button>
       </div>
    )
