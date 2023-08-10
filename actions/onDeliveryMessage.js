@@ -33,6 +33,8 @@ module.exports = {
             }
          )
          res.status(200).json({ status: "correct" })
-      } catch (error) {}
+      } catch (error) {
+         console.log(error)
+      }
    },
 }

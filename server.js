@@ -23,6 +23,7 @@ const onRefreshPromotions = require("./actions/onRefreshPromotions")
 const onFAQ = require("./actions/onFAQ")
 const https = require("https")
 const fs = require("fs")
+const onPing = require("./actions/onPing")
 const port = consts.port
 /*
 const sslServer = https.createServer(
@@ -42,7 +43,6 @@ app.use(
    cors({ "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS" })
 )
 connectMongoose()
-
 bot.onText(onStart.text, onStart.action)
 bot.onText(onMenu.text, onMenu.action)
 app.get(onProducts.route, onProducts.action)
@@ -52,6 +52,7 @@ app.post(onDeliveryMessage.route, onDeliveryMessage.action)
 app.get(onPromotions.route, onPromotions.action)
 app.get(onGenerateGR.route, onGenerateGR.action)
 app.get(onUseQRPromotion.route, onUseQRPromotion.action)
+app.get(onPing.route, onPing.action)
 app.get("*", (req, res) => res.sendFile(path.resolve("views/client/build/index.html")))
 
 bot.on("callback_query", (msg) => {
