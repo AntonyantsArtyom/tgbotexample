@@ -19,7 +19,7 @@ function BasketPage() {
    const onBack = () => navigate("/menu")
    const onCloseError = () => {
       store.setErrorStatus(false)
-      window.Telegram.WebApp.close()
+      navigate("/menu")
    }
    return (
       <>
