@@ -5,7 +5,6 @@ const mailer = require("../mailer")
 module.exports = {
    route: "/deliveryMessage/:id",
    action: async (req, res) => {
-      console.log(1)
       try {
          const basket = req.body.basket
          let basketText = ""
@@ -15,7 +14,7 @@ module.exports = {
             to: "greenhungryfox@mail.ru>",
             subject: "заказ",
             html: `<strong>адрес: </strong>${req.body.adres}<br/><strong>телефон: </strong>${req.body.phone}<br/><strong>время: </strong>${req.body.time}<br/><strong>дополнительно: </strong>${req.body.additional}<br/><br/><pre>${basketText}</pre></br><strong>цена с учетом бонусов: </strong>${req.body.price}`,
-         })
+         }).catch((error) => console.log(error))
          await User.updateOne(
             { id: req.params.id },
             {
