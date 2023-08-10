@@ -5,6 +5,7 @@ const mailer = require("../mailer")
 module.exports = {
    route: "/deliveryMessage/:id",
    action: async (req, res) => {
+      console.log(1)
       try {
          const basket = req.body.basket
          let basketText = ""
