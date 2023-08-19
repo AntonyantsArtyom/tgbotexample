@@ -24,17 +24,14 @@ const onFAQ = require("./actions/onFAQ")
 const https = require("https")
 const fs = require("fs")
 const onPing = require("./actions/onPing")
+const controlBot = require("./controlBot")
+const onStartControl = require("./actions/onStartControl")
+const onDeleteInControl = require("./actions/onDeleteInControl")
+const onCreateTextEvent = require("./actions/onCreateTextEvent")
+const onDeleteEvent = require("./actions/onDeleteEvent")
+const onCreatePhotoEvent = require("./actions/onCreatePhotoEvent")
 const port = consts.port
-/*
-const sslServer = https.createServer(
-   {
-      key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
-      cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
-   },
-   app
-)
-sslServer.listen(port, () => console.log(`порт защищенного сервера - ${port}`))
-*/
+
 app.listen(port, () => console.log(`порт сервера - ${port}`))
 app.use(express.static(path.join(__dirname, "views/client/build/")))
 app.use(express.static(path.join(__dirname, "views/client/public/images")))
@@ -63,6 +60,13 @@ bot.on("callback_query", (msg) => {
    msg.data == onDelete.callback && onDelete.action(msg)
    msg.data == onFAQ.callback && onFAQ.action(msg)
 })
+
+controlBot.onText(onStartControl.text, onStartControl.action)
+controlBot.on("callback_query", (msg) => {
+   msg.data == onDeleteEvent.callback && onDeleteEvent.action(msg)
+})
+controlBot.on("text", (msg) => onStartControl.text.test(msg.text) == false && onCreateTextEvent.action(msg))
+controlBot.on("photo", onCreatePhotoEvent.action)
 
 cron.schedule("*/30 * * * *", () => {
    try {
