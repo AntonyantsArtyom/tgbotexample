@@ -14,7 +14,7 @@ const app = express()
 const path = require("path")
 const onFriendPromotion = require("./actions/onFriendPromotion")
 const onWeekPromotion = require("./actions/onWeekPromotion")
-const onGenerateGR = require("./actions/onGenerateGR")
+const onGenerateQR = require("./actions/onGenerateQR")
 const onUsePromotions = require("./actions/onUsePromotions")
 const onDelete = require("./actions/onDelete")
 const onUseQRPromotion = require("./actions/onUseQRPromotion")
@@ -30,6 +30,7 @@ const onDeleteInControl = require("./actions/onDeleteInControl")
 const onCreateTextEvent = require("./actions/onCreateTextEvent")
 const onDeleteEvent = require("./actions/onDeleteEvent")
 const onCreatePhotoEvent = require("./actions/onCreatePhotoEvent")
+const onClearEvents = require("./actions/onClearEvents")
 const port = consts.port
 
 app.listen(port, () => console.log(`порт сервера - ${port}`))
@@ -47,7 +48,7 @@ app.get(onBasket.route, onBasket.action)
 app.put(onUpdateBasket.route, onUpdateBasket.action)
 app.post(onDeliveryMessage.route, onDeliveryMessage.action)
 app.get(onPromotions.route, onPromotions.action)
-app.get(onGenerateGR.route, onGenerateGR.action)
+app.get(onGenerateQR.route, onGenerateQR.action)
 app.get(onUseQRPromotion.route, onUseQRPromotion.action)
 app.get(onPing.route, onPing.action)
 app.get("*", (req, res) => res.sendFile(path.resolve("views/client/build/index.html")))
@@ -68,8 +69,5 @@ controlBot.on("callback_query", (msg) => {
 controlBot.on("text", (msg) => onStartControl.text.test(msg.text) == false && onCreateTextEvent.action(msg))
 controlBot.on("photo", onCreatePhotoEvent.action)
 
-cron.schedule("*/30 * * * *", () => {
-   try {
-      onRefreshPromotions.action()
-   } catch (error) {}
-})
+cron.schedule("*/30 * * * *", () => onRefreshPromotions.action())
+cron.schedule("* */1 * * *", () => onClearEvents.action())

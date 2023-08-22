@@ -1,6 +1,7 @@
 const bot = require("../bot")
 const qr = require("qrcode")
 const User = require("../models/User")
+const consts = require("../consts")
 module.exports = {
    callback: "use_promotion",
    action: async (msg) => {
@@ -16,7 +17,7 @@ module.exports = {
          }`
          bot.sendPhoto(
             msg.message.chat.id,
-            await qr.toBuffer(`http://localhost4000/useQRPromotions/${msg.from.id}`, { margin: 5, size: 5 }),
+            await qr.toBuffer(`${consts.site}/useQRPromotions/${msg.from.id}`, { margin: 5, size: 5 }),
             {
                caption: text,
                parse_mode: "HTML",
