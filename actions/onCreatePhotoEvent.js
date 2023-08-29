@@ -5,9 +5,13 @@ const controlBot = require("../controlBot")
 const Event = require("../models/Event")
 const User = require("../models/User")
 const needle = require("needle")
+const checkAdmin = require("../utils/checkAdmin")
 
 module.exports = {
    action: async (msg) => {
+      if (!(await checkAdmin(msg))) {
+         return controlBot.sendMessage(msg.chat.id, "вы не найдены в базе администраторов бота")
+      }
       let photo = await axios
          .get(
             `https://api.telegram.org/bot${consts.control_bot_token}/getFile?file_id=${

@@ -3,9 +3,13 @@ const consts = require("../consts")
 const controlBot = require("../controlBot")
 const Event = require("../models/Event")
 const User = require("../models/User")
+const checkAdmin = require("../utils/checkAdmin")
 
 module.exports = {
    action: async (msg) => {
+      if (!(await checkAdmin(msg))) {
+         return controlBot.sendMessage(msg.chat.id, "вы не найдены в базе администраторов бота")
+      }
       const chats = await User.find().then((users) => users.map((user) => user.chat))
       let messages = []
       chats.forEach(async (chat, index) => {
