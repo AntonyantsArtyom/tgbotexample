@@ -23,13 +23,14 @@ module.exports = {
             }
          )
          if (!(await User.findOne({ id: msg.from.id }))) {
+            const weeks = [15, 30, 40]
             await new User({
                id: msg.from.id,
                chat: msg.chat.id,
                father: await User.findOne({ id: match[1] }).then((data) => data?.id),
                children: [],
                basket: [],
-               weekPromotion: 0,
+               weekPromotion: weeks[Math.floor(Math.random() * weeks.length)],
                friendPromotion: 0,
             }).save()
             if ((await User.findOne({ id: match[1] })) && match[1] != msg.from.id) {
